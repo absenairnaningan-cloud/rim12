@@ -1,0 +1,52 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Public & Collaborative Collections for Warung Rimbun RPJMD Portal
+    match /aspirasi/{aspirasiId} {
+      allow read, write: if true;
+    }
+
+    match /csr_programs/{csrId} {
+      allow read, write: if true;
+    }
+
+    match /riset/{risetId} {
+      allow read, write: if true;
+    }
+
+    match /oms/{omsId} {
+      allow read, write: if true;
+    }
+
+    match /agenda/{agendaId} {
+      allow read, write: if true;
+    }
+
+    match /kehadiran/{kehadiranId} {
+      allow read, write: if true;
+    }
+
+    match /bab/{babId} {
+      allow read, write: if true;
+    }
+
+    match /users/{userId} {
+      allow read, write: if true;
+    }
+
+    match /opd/{opdId} {
+      allow read, write: if true;
+    }
+
+    match /misi/{misiId} {
+      allow read, write: if true;
+    }
+
+    // Connection test document
+    match /test/{docId} {
+      allow read, write: if true;
+    }
+  }
+}

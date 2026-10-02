@@ -1,0 +1,165 @@
+{
+  "entities": {
+    "Aspirasi": {
+      "title": "Aspirasi",
+      "description": "Usulan aspirasi masyarakat dalam perencanaan RPJMD Kabupaten Tanggamus",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "tipePemangku": { "type": "string" },
+        "misiId": { "type": "string" },
+        "judul": { "type": "string" },
+        "ringkasan": { "type": "string" },
+        "deskripsi": { "type": "string" },
+        "pengusulNama": { "type": "string" },
+        "pengusulInstitusi": { "type": "string" },
+        "kecamatan": { "type": "string" },
+        "pekon": { "type": "string" },
+        "detailAlamat": { "type": "string" },
+        "estimasiAnggaran": { "type": "string" },
+        "bentukKolaborasi": { "type": "string" },
+        "dukunganSuara": { "type": "number" },
+        "tanggal": { "type": "string" },
+        "status": { "type": "string" },
+        "catatanBapperida": { "type": "string" },
+        "disposisiOpd": { "type": "string" },
+        "hasVoted": { "type": "boolean" }
+      },
+      "required": ["id", "judul", "ringkasan", "pengusulNama", "kecamatan", "status"]
+    },
+    "CsrProgram": {
+      "title": "CsrProgram",
+      "description": "Komitmen kemitraan CSR dunia usaha untuk mendukung RPJMD",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "perusahaan": { "type": "string" },
+        "sektor": { "type": "string" },
+        "program": { "type": "string" },
+        "alokasiAnggaran": { "type": "number" },
+        "lokasiKecamatan": { "type": "string" },
+        "misiTerkait": { "type": "string" },
+        "statusKomitmen": { "type": "string" },
+        "pjKontak": { "type": "string" }
+      },
+      "required": ["id", "perusahaan", "program", "alokasiAnggaran", "statusKomitmen"]
+    },
+    "RisetAkademisi": {
+      "title": "RisetAkademisi",
+      "description": "Naskah kajian akademis dan rekomendasi kebijakan kampus",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "universitas": { "type": "string" },
+        "judulKajian": { "type": "string" },
+        "penelitiUtama": { "type": "string" },
+        "misiRPJMD": { "type": "string" },
+        "rekomendasiUtama": { "type": "string" },
+        "statusAdopsi": { "type": "string" },
+        "tautanNaskah": { "type": "string" }
+      },
+      "required": ["id", "universitas", "judulKajian", "penelitiUtama", "statusAdopsi"]
+    },
+    "InisiatifOms": {
+      "title": "InisiatifOms",
+      "description": "Inisiatif dan advokasi organisasi masyarakat sipil di Tanggamus",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "namaOms": { "type": "string" },
+        "bidangGerakan": { "type": "string" },
+        "judulProgram": { "type": "string" },
+        "fokusIsu": { "type": "string" },
+        "lokasiFokus": { "type": "string" },
+        "pekon": { "type": "string" },
+        "detailAlamat": { "type": "string" },
+        "kebutuhanDukunganPemda": { "type": "string" },
+        "statusVerifikasi": { "type": "string" },
+        "kontakPerson": { "type": "string" }
+      },
+      "required": ["id", "namaOms", "judulProgram", "lokasiFokus", "statusVerifikasi"]
+    },
+    "AgendaKonsultasi": {
+      "title": "AgendaKonsultasi",
+      "description": "Jadwal sidang konsultasi publik dan Musrenbang RPJMD",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "judul": { "type": "string" },
+        "tanggal": { "type": "string" },
+        "waktu": { "type": "string" },
+        "tempat": { "type": "string" },
+        "tahapan": { "type": "string" },
+        "status": { "type": "string" },
+        "kapasitasPeserta": { "type": "number" },
+        "terdaftar": { "type": "number" },
+        "tautanDaring": { "type": "string" }
+      },
+      "required": ["id", "judul", "tanggal", "status"]
+    },
+    "KehadiranSidang": {
+      "title": "KehadiranSidang",
+      "description": "Konfirmasi kehadiran pemangku kepentingan dalam sidang RPJMD",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "agendaId": { "type": "string" },
+        "namaLengkap": { "type": "string" },
+        "instansi": { "type": "string" },
+        "tipePemangku": { "type": "string" },
+        "metodeHadir": { "type": "string" },
+        "catatanPokok": { "type": "string" },
+        "statusVerifikasi": { "type": "string" },
+        "waktuDaftar": { "type": "string" }
+      },
+      "required": ["id", "agendaId", "namaLengkap", "metodeHadir", "statusVerifikasi"]
+    },
+    "UserAccount": {
+      "title": "UserAccount",
+      "description": "Akun pengguna sistem WARUNG RIMBUN (Admin, OPD, Pemangku Kepentingan)",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string" },
+        "nama": { "type": "string" },
+        "role": { "type": "string" },
+        "opdId": { "type": "string" },
+        "opdNama": { "type": "string" },
+        "avatar": { "type": "string" },
+        "statusAktif": { "type": "boolean" },
+        "lastLogin": { "type": "string" }
+      },
+      "required": ["id", "email", "nama", "role", "statusAktif"]
+    }
+  },
+  "firestore": {
+    "/aspirasi/{aspirasiId}": {
+      "schema": { "$ref": "#/entities/Aspirasi" },
+      "description": "Koleksi usulan aspirasi warga dan multipihak"
+    },
+    "/csr_programs/{csrId}": {
+      "schema": { "$ref": "#/entities/CsrProgram" },
+      "description": "Koleksi komitmen kemitraan CSR dunia usaha"
+    },
+    "/riset/{risetId}": {
+      "schema": { "$ref": "#/entities/RisetAkademisi" },
+      "description": "Koleksi naskah kajian ilmiah dan rekomendasi akademisi"
+    },
+    "/oms/{omsId}": {
+      "schema": { "$ref": "#/entities/InisiatifOms" },
+      "description": "Koleksi inisiatif dan program organisasi masyarakat sipil"
+    },
+    "/agenda/{agendaId}": {
+      "schema": { "$ref": "#/entities/AgendaKonsultasi" },
+      "description": "Koleksi agenda sidang dan konsultasi publik"
+    },
+    "/kehadiran/{kehadiranId}": {
+      "schema": { "$ref": "#/entities/KehadiranSidang" },
+      "description": "Koleksi registrasi dan konfirmasi kehadiran sidang"
+    },
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserAccount" },
+      "description": "Koleksi profil dan kredensial pengguna terdaftar"
+    }
+  }
+}
